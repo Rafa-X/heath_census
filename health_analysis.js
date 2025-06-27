@@ -1,4 +1,4 @@
-const addPatientButton = document.get('addPatient');     //add patient data
+const addPatientButton = document.getElementById('addPatient');     //add patient data
 const report = document.getElementById('report');        //see analysis report
 const btnSearch = document.getElementById('btnSearch');  //search results
 const patients = [];    //store patients data
@@ -24,7 +24,7 @@ function resetForm(){
     document.getElementById('name').value = '';
     document.querySelector('input[name=gender]:checked').checked = false;
     document.getElementById('age').value = '';
-    document.getElementById('codition').value = '';
+    document.getElementById('condition').value = '';
 }
 
 function generateReport(){
@@ -65,7 +65,7 @@ function generateReport(){
     for( const gender in genderConditionsCount){
         report.innerHTML += `${gender}: <br>`;
         for( const condition in genderConditionsCount[gender]){
-            report.innerHTML += `&nsbp;&nsbp;${condition}: ${genderConditionsCount[gender][condition]}<br>`;
+            report.innerHTML += `&nbsp;&nbsp;${condition}: ${genderConditionsCount[gender][condition]}<br>`;
         }
     }
 }
@@ -104,4 +104,4 @@ function searchCondition(){
 
 
 btnSearch.addEventListener('click', searchCondition);
-addPatientButton.addEventListener('click', addPatient);
+addPatientButton.addEventListener("click", addPatient);
